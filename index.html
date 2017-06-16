@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>GifTastic</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <!--header-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                      <h1>Train Station</h1>
+                      <p>Florida Train Schedule</p>
+                    </div>
+                </div>
+            </div>
+<!--            Train information-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Schedule</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Train Name</th>
+                                                <th>Destination</th>
+                                                <th>Frequency (min)</th>
+                                                <th>Next Arrival</th>
+                                                <th>Minutes Away</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            Add train information form-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Add Train</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h5>Train Name:</h5>
+                                <input type="text" class="form-control" placeholder="Train name" id="name">
+                            <h5>Train Destination:</h5>
+                                <input type="text" class="form-control" placeholder="Destination" id="destination">
+                            <h5>Train Start Time:</h5>
+                                <input type="text" class="form-control" placeholder="Start Time" id="startTime">
+                            <h5>Train Frequency:</h5>
+                                <input type="text" class="form-control" placeholder="Frequency" id="frequency">
+                            <button id="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAtZmd3Lpun9-3kngJrnEVmw5XPF_vQPZk",
+            authDomain: "train-scheduler-3eac8.firebaseapp.com",
+            databaseURL: "https://train-scheduler-3eac8.firebaseio.com",
+            projectId: "train-scheduler-3eac8",
+            storageBucket: "train-scheduler-3eac8.appspot.com",
+            messagingSenderId: "182782135975"
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/train.js"></script>
+    </body>
+</html>
