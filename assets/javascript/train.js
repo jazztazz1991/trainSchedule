@@ -1,5 +1,3 @@
-
-//variables
 var initialName = []; 
 var initialDestination = [];
 var initialStartTime = [];
@@ -19,12 +17,10 @@ database.ref().on("value", function(snapshot){
         
     if (snapshot.child("name").exists() && snapshot.child("destination").exists() && snapshot.child("startTime").exists() && snapshot.child("frequency").exists()) {
 
-    // Set the local variables for highBidder equal to the stored values in firebase.
         trainName = snapshot.val().name;
         destination = snapshot.val().destination;
         startTime = snapshot.val().startTime;
         frequency = snapshot.val().frequency;
-        
         
         var nextTrain = "0";
             
@@ -41,8 +37,6 @@ database.ref().on("value", function(snapshot){
                 $("#tableBody").append("<tr><td>" + snapshot.val().name[i] + "</td><td>" + snapshot.val().destination[i] + "</td><td>" + snapshot.val().frequency[i] + "</td><td>" + nextArrival + "</td><td>" + minTill + "</td> </tr>");
             }
     }else{
-        
-        
         $("#tableBody").append("<tr><td>There</td><td>are</td><td>no</td><td>trains</td><td>currently</td> </tr>");
     }
 });
@@ -56,13 +50,10 @@ $("#submit").on("click",function(event){
     startTime.push($("#startTime").val().trim());
     frequency.push($("#frequency").val().trim());
     
-    console.log(trainName + " " + destination + " " + startTime + " " + frequency);
-    
     database.ref().set({
         name: trainName,
         destination: destination,
         startTime: startTime,
         frequency: frequency
     })
-    
 });
