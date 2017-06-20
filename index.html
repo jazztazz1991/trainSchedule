@@ -66,9 +66,9 @@
                                 <input type="text" class="form-control" placeholder="Train name" id="name">
                             <h5>Train Destination:</h5>
                                 <input type="text" class="form-control" placeholder="Destination" id="destination">
-                            <h5>Train Start Time:</h5>
+                            <h5>Train Start Time (hh:mm - military time):</h5>
                                 <input type="text" class="form-control" placeholder="Start Time" id="startTime">
-                            <h5>Train Frequency:</h5>
+                            <h5>Train Frequency (minutes):</h5>
                                 <input type="text" class="form-control" placeholder="Frequency" id="frequency">
                             <button id="submit">Submit</button>
                         </div>
@@ -78,7 +78,7 @@
         
         </div>
         
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
         <script>
           // Initialize Firebase
